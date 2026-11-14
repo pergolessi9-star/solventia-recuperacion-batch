@@ -1,0 +1,19 @@
+name: SolventIA static verification
+on:
+  push:
+    branches: [main, fix/vercel-static-export-evidence]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/verify.mjs
