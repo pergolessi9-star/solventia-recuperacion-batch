@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolventIA Energy · Recuperación batch</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f0f4f1;color:#183029;font:16px/1.55 system-ui,sans-serif}header{background:#12342b;color:#eff9e7;padding:3rem max(6vw,1rem)}h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.03;margin:.4em 0}main{max-width:980px;margin:auto;padding:1.25rem}section{padding:1.25rem;background:white;border-radius:12px;margin-bottom:1rem}button{font:inherit;background:#255b44;color:white;padding:.7em 1em;border:0;border-radius:7px;cursor:pointer}button:disabled{opacity:.55}.table{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left}td,th{padding:.55em;border-bottom:1px solid #dae6dd}code{overflow-wrap:anywhere}
+</style>
+<header><small>SolventIA Energy · Laboratorio privado</small><h1>Recuperación batch</h1><p>Valida, calcula y genera un CSV. Luego comprueba la recuperación tras un fallo controlado.</p></header>
+<main><section><h2>Ensayo con 200.000 registros sintéticos</h2><p>El navegador ejecuta las tres etapas y conserva los puntos de control en memoria durante el ensayo. Los tiempos se miden en tu equipo. La electricidad requiere un medidor físico.</p><button id="run">Ejecutar ensayo</button> <button id="save" disabled>Descargar evidencia JSON</button><p id="status" role="status">Listo para ejecutar.</p></section>
+<section id="panel" hidden><h2>Resultados</h2><div class="table"><table><thead><tr><th>Caso</th><th>Validar</th><th>Calcular</th><th>Generar CSV</th><th>Tiempo</th></tr></thead><tbody id="result"></tbody></table></div><p id="proof"></p></section></main>
+<script>
+const stages=[
+ ['Validar',rows=>{if(!rows.every(([g,n])=>Number.isInteger(g)&&Number.isInteger(n)))throw Error('Registro inválido');return rows;}],
+ ['Calcular',rows=>{const sums=Array(64).fill(0);for(const [g,n] of rows)sums[g]+=n;return sums;}],
+ ['Generar CSV',sums=>'grupo,total\n'+sums.map((n,g)=>g+','+n+'\n').join('')]
+];
+const get=id=>document.getElementById(id);
+const encoder=new TextEncoder();
+async function fingerprint(value){
+ if(!globalThis.crypto?.subtle)return null;
+ const bytes=await crypto.subtle.digest('SHA-256',encoder.encode(value));
+ return Array.from(new Uint8Array(bytes),x=>x.toString(16).padStart(2,'0')).join('');
+}
+function execute(rows,checkpoints,{reuse=false,fail=false}={}){
+ const start=performance.now(),trace=[];
+ let value=rows;
+ for(const [index,[name,apply]] of stages.entries()){
+  const input=JSON.stringify(value);
+  const saved=checkpoints.get(name);
+  if(reuse&&saved?.input===input&&JSON.stringify(saved.value)===saved.output){
+   value=saved.value;trace.push('Reutilizada');continue;
+  }
+  if(fail&&index===2){
+   trace.push('Fallo controlado');
+   return {trace,ms:performance.now()-start,csv:null};
+  }
+  value=apply(value);
+  checkpoints.set(name,{input,value,output:JSON.stringify(value)});
+  trace.push('Ejecutada');
+ }
+ return {trace,ms:performance.now()-start,csv:value};
+}
+async function experiment(){
+ const rows=Array.from({length:200000},(_,i)=>[i%64,i%997]);
+ const cache=new Map();
+ const failure=execute(rows,cache,{fail:true});
+ const recovered=execute(rows,cache,{reuse:true});
+ const reference=execute(rows,new Map());
+ const changed=rows.slice();
+ changed[0]=[0,1];
+ const updated=execute(changed,cache,{reuse:true});
+ const updatedReference=execute(changed,new Map());
+ if(recovered.csv!==reference.csv||updated.csv!==updatedReference.csv||updated.csv===reference.csv||
+    recovered.trace.join()!=='Reutilizada,Reutilizada,Ejecutada'||updated.trace.some(x=>x!=='Ejecutada'))
+  throw Error('El ensayo no supera la comprobación de recuperación.');
+ return {registros:rows.length,casos:{
+  'Fallo inicial':failure,'Recuperación selectiva':recovered,'Repetición completa':reference,
+  'Recuperación con entrada modificada':updated,'Referencia con entrada modificada':updatedReference
+ },csv_identicos:true,sha256_original:await fingerprint(reference.csv),sha256_modificado:await fingerprint(updated.csv),energia_medida:false};
+}
+let evidence;
+get('run').onclick=async()=>{
+ const run=get('run');run.disabled=true;get('save').disabled=true;get('panel').hidden=true;
+ get('status').textContent='Ejecutando…';
+ try{
+  await new Promise(resolve=>setTimeout(resolve,0));
+  evidence=await experiment();
+  const body=get('result');body.replaceChildren();
+  for(const [name,row] of Object.entries(evidence.casos)){
+   const tr=body.insertRow();
+   for(const item of [name,...row.trace,row.ms.toFixed(2)+' ms'])tr.insertCell().textContent=item;
+  }
+  get('proof').textContent='Los CSV coinciden byte por byte con su referencia en ambos casos. '+(evidence.sha256_original?'SHA-256 del CSV original: '+evidence.sha256_original:'Huella SHA-256 no disponible en este navegador.');
+  get('panel').hidden=false;get('save').disabled=false;
+  get('status').textContent='Ensayo superado.';
+ }catch(error){get('status').textContent=error.message;}finally{run.disabled=false;}
+};
+get('save').onclick=()=>{
+ const url=URL.createObjectURL(new Blob([JSON.stringify(evidence,null,2)],{type:'application/json'}));
+ const link=document.createElement('a');link.href=url;link.download='SolventIA_Evidencia_Batch.json';link.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+</script>
+</html>

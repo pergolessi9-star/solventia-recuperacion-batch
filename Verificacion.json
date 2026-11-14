@@ -1,0 +1,793 @@
+{
+  "repeticiones": 9,
+  "registros_por_ensayo": 200000,
+  "mediana_selectiva_ms": 32.996,
+  "mediana_completa_ms": 165.963,
+  "energia_medida": false,
+  "orden": "selectiva seguida de completa en cada proceso",
+  "ensayos": [
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 259879237,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 33468485,
+        "tiempo_referencia_ns": 169259637,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 171992190,
+        "tiempo_referencia_ns": 164499577,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 274576881,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 41867397,
+        "tiempo_referencia_ns": 171959904,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 173166182,
+        "tiempo_referencia_ns": 160825930,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 163811254,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 33919995,
+        "tiempo_referencia_ns": 161337355,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 162159261,
+        "tiempo_referencia_ns": 157559627,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 171108013,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 32915247,
+        "tiempo_referencia_ns": 184962102,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 174789449,
+        "tiempo_referencia_ns": 166866685,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 174599140,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 32661245,
+        "tiempo_referencia_ns": 175141778,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 164888601,
+        "tiempo_referencia_ns": 161213923,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 197774437,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 30936952,
+        "tiempo_referencia_ns": 163645236,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 164553338,
+        "tiempo_referencia_ns": 156634125,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 167171828,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 32995876,
+        "tiempo_referencia_ns": 156467198,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 168154390,
+        "tiempo_referencia_ns": 163615923,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 168210653,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 35323956,
+        "tiempo_referencia_ns": 165001601,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 161685329,
+        "tiempo_referencia_ns": 157878614,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    },
+    {
+      "registros_sinteticos": 200000,
+      "fallo": [
+        [
+          "validate",
+          "ejecutada"
+        ],
+        [
+          "calculate",
+          "ejecutada"
+        ],
+        [
+          "render",
+          "fallo controlado"
+        ]
+      ],
+      "tiempo_desde_inicio_hasta_fallo_ns": 168122654,
+      "recuperacion": {
+        "traza": [
+          [
+            "validate",
+            "reutilizada"
+          ],
+          [
+            "calculate",
+            "reutilizada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 32245948,
+        "tiempo_referencia_ns": 165963242,
+        "sha256_csv": "a227471bd6aff61097b5f2113eb1f322ebafba05f7d73856c98d27a0b127b6ad",
+        "identico_byte_a_byte": true
+      },
+      "entrada_modificada": {
+        "traza": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "referencia": [
+          [
+            "validate",
+            "ejecutada"
+          ],
+          [
+            "calculate",
+            "ejecutada"
+          ],
+          [
+            "render",
+            "ejecutada"
+          ]
+        ],
+        "tiempo_selectivo_ns": 184748921,
+        "tiempo_referencia_ns": 177226087,
+        "sha256_csv": "284c0ada707a1ba1627ad0c10b25fc39e1e8d093df233a1b8282808f8cd57019",
+        "identico_byte_a_byte": true
+      },
+      "energia": "sin medicion fisica"
+    }
+  ]
+}

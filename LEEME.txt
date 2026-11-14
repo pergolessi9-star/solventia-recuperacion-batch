@@ -1,0 +1,16 @@
+SOLVENTIA ENERGY · RECUPERACIÓN BATCH
+
+Abre SolventIA_Recuperacion_Batch.html y pulsa «Ejecutar ensayo».
+Funciona localmente en el navegador y permite exportar la evidencia en JSON.
+
+Para reproducir la prueba con puntos de control en SQLite, ejecuta:
+  python3 solventia_recuperacion.py
+En Windows también puedes usar:
+  py -3 solventia_recuperacion.py
+
+SolventIA_Evidencia_Batch.json es el archivo original del ensayo del usuario.
+Verificacion.json contiene nueve ejecuciones de Python y sus trazas.
+Las dos implementaciones producen las mismas huellas con los datos de prueba.
+El ensayo emplea datos sintéticos. Los tiempos son locales y el orden de
+las variantes es fijo. La energía y el rendimiento en producción requieren
+mediciones en el entorno autorizado correspondiente.
