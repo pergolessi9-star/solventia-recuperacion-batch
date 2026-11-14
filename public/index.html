@@ -137,7 +137,7 @@ async function experiment(){
 }
 let evidence;
 get('run').onclick=async()=>{
- const run=get('run');run.disabled=true;get('save').disabled=true;get('panel').hidden=true;
+ const run=get('run');run.disabled=true;get('save').disabled=true;get('save').hidden=true;get('panel').hidden=true;evidence=undefined;
  get('status').textContent='Ejecutando…';
  try{
   await new Promise(resolve=>setTimeout(resolve,0));
@@ -148,7 +148,7 @@ get('run').onclick=async()=>{
    for(const item of [name,...row.trace,row.ms.toFixed(2)+' ms'])tr.insertCell().textContent=item;
   }
   get('proof').textContent='Los CSV coinciden byte por byte con su referencia en ambos casos. '+(evidence.sha256_original?'SHA-256 del CSV original: '+evidence.sha256_original:'Huella SHA-256 no disponible en este navegador.');
-  get('panel').hidden=false;get('save').disabled=false;
+  get('panel').hidden=false;get('save').hidden=false;get('save').disabled=false;
   get('status').textContent='Ensayo superado.';
  }catch(error){get('status').textContent=error.message;}finally{run.disabled=false;}
 };
